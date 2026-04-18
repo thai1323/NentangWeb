@@ -1,0 +1,83 @@
+PHẦN A — KIỂM TRA ĐỌC HIỂU
+Câu A1 (5đ) — HTTP & Browser
+
+1. Liệt kê đúng thứ tự 5 bước xảy ra khi truy cập https://shopee.vn:
+
+Bước 1 (Gửi Request): Người dùng nhập URL và nhấn Enter, trình duyệt (Client) gửi một HTTP Request xuất phát từ máy tính, qua router, nhà mạng và cáp quang để đến Server.
+
+Bước 2 (DNS Lookup): (Dựa theo logic thực tế trong hành trình 0.3s) Hệ thống tìm kiếm địa chỉ IP của server Shopee (trong tài liệu mô tả là "đến data center").
+
+Bước 3 (Server xử lý): Server nhận request, xử lý logic (như kiểm tra xem Minh muốn xem gì) và chuẩn bị dữ liệu.
+
+Bước 4 (Gửi Response): Server gửi ngược dữ liệu lại cho trình duyệt thông qua HTTP Response (thường chứa file HTML, CSS, JS).
+
+Bước 5 (Rendering): Trình duyệt nhận file và thực hiện quy trình: Parse HTML (đọc bản vẽ) → Parse CSS (thiết kế nội thất) → Execute JS (lắp hệ thống điện) → Paint & Render (hiện trang web).
+
+2. Thông tin trong tab Network:
+
+Tab Network cho thấy các requests/responses. Nó giúp lập trình viên biết website tải những tài nguyên nào (HTML, ảnh, CSS, JS), file nào nặng nhất và tốc độ tải trang.
+
+![Mô tả ảnh: Tab Network lọc CSS của Shopee](./screenshots/network_shopee.png)
+
+Câu A2 — Semantic HTML
+
+1. Tại sao SEO thấp?
+
+Trang web bị lỗi "Div Soup" (dùng <div> cho mọi thứ). Google không hiểu được cấu trúc nội dung, vai trò của từng phần, dẫn đến đánh giá thấp.
+
+2. 4 lỗi Semantic và cách sửa:
+
+Header: Dùng <div class="header"> → Sửa: <header> (Xác định phần đầu trang).
+
+Menu: Dùng <div class="menu"> → Sửa: <nav> (Chỉ rõ khu vực điều hướng).
+
+Nội dung chính: Dùng <div class="main"> → Sửa: <main> (Xác định vùng chứa nội dung cốt lõi).
+
+Sản phẩm: Dùng <div class="product"> → Sửa: <article> (Dùng cho bài viết/sản phẩm độc lập).
+
+3. Code sửa lại:
+
+<header>
+    <div class="logo">ShopTLU</div>
+    <nav>
+        <a href="/">Trang chủ</a> | <a href="/products">Sản phẩm</a>
+    </nav>
+</header>
+<main>
+    <article>
+        <h3>iPhone 16 Pro</h3>
+        <p>25.990.000đ</p>
+        <img src="iphone.jpg" alt="iPhone 16" loading="lazy">
+    </article>
+</main>
+<footer>© 2026 ShopTLU</footer>
+
+Câu A3 (5đ) — Block vs Inline
+
+![Mô tả ảnh: Mô tả kết quả hiển thị](./screenshots/ketqua.png)
+
+Giải thích tại sao:
+
+<div> (Block-level element): Thẻ <div> mặc định chiếm toàn bộ chiều ngang của container và luôn bắt đầu trên một dòng mới. Do đó, "Hộp 1", "Hộp 2" và "Hộp 3" nằm trên các dòng riêng biệt.
+
+<span> và <strong> (Inline-level element): Các thẻ này chỉ chiếm diện tích vừa đủ nội dung và không bắt đầu dòng mới. Vì vậy, "Text A" và "Text B" hiển thị trên cùng một hàng; "Text C" và "Text D" cũng hiển thị trên cùng một hàng.
+
+Câu A4 (5đ) — Table
+
+1. Phân biệt <thead>, <tbody>, <tfoot>
+
+<thead> (Header): Chứa tiêu đề các cột (thường dùng <th>), giúp định danh dữ liệu.
+
+<tbody> (Body): Chứa dữ liệu chính của bảng.
+
+<tfoot> (Footer): Chứa thông tin tổng kết, cộng dồn (thường dùng colspan để gộp ô).
+
+2. Tại sao KHÔNG dùng Table để làm layout?
+
+Dùng Table để dàn trang là kỹ thuật cũ, hiện tại không nên dùng vì:
+
+Sai Semantic: Table chỉ dành cho dữ liệu thống kê, không phải để chia cột trang web.
+
+Khó Responsive: Table rất khó co giãn trên màn hình điện thoại (Mobile).
+
+Code rối: Cấu trúc thẻ lồng nhau quá nhiều (tr, td) gây khó bảo trì so với CSS Flexbox/Grid.
