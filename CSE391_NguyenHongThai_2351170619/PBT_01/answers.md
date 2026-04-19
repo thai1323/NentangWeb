@@ -1,5 +1,5 @@
 PHẦN A — KIỂM TRA ĐỌC HIỂU
-Câu A1 (5đ) — HTTP & Browser
+Câu A1 — HTTP & Browser
 
 1. Liệt kê đúng thứ tự 5 bước xảy ra khi truy cập https://shopee.vn:
 
@@ -52,7 +52,7 @@ Sản phẩm: Dùng <div class="product"> → Sửa: <article> (Dùng cho bài v
 </main>
 <footer>© 2026 ShopTLU</footer>
 
-Câu A3 (5đ) — Block vs Inline
+Câu A3 — Block vs Inline
 
 ![Mô tả ảnh: Mô tả kết quả hiển thị](./screenshots/ketqua.png)
 
@@ -62,7 +62,7 @@ Giải thích tại sao:
 
 <span> và <strong> (Inline-level element): Các thẻ này chỉ chiếm diện tích vừa đủ nội dung và không bắt đầu dòng mới. Vì vậy, "Text A" và "Text B" hiển thị trên cùng một hàng; "Text C" và "Text D" cũng hiển thị trên cùng một hàng.
 
-Câu A4 (5đ) — Table
+Câu A4 — Table
 
 1. Phân biệt <thead>, <tbody>, <tfoot>
 
@@ -81,3 +81,25 @@ Sai Semantic: Table chỉ dành cho dữ liệu thống kê, không phải để
 Khó Responsive: Table rất khó co giãn trên màn hình điện thoại (Mobile).
 
 Code rối: Cấu trúc thẻ lồng nhau quá nhiều (tr, td) gây khó bảo trì so với CSS Flexbox/Grid.
+
+Bài B3 — Debug HTML
+
+Lỗi 1: Dòng 1 — Thiếu giá trị html trong thẻ khai báo — Sửa thành <!DOCTYPE html>.
+
+Lỗi 2: Dòng 2 — Thiếu thuộc tính lang cho thẻ mở — Sửa thành <html lang="vi">.
+
+Lỗi 3: Dòng 3 — Thẻ <title> chưa đóng — Sửa thành <title>Trang web</title>.
+
+Lỗi 4: Dòng 4 — Giá trị charset sai — Sửa thành và bổ sung thêm <meta charset="UTF-8">, <meta name="viewport" content="width=device-width, initial-scale=1.0">.
+
+Lỗi 5: Dòng 5 — Thẻ kết thúc <h1> viết thiếu dấu gạch chéo — Sửa thành </h1>.
+
+Lỗi 6: Dòng 10 — Thẻ <a> kết thúc sai — Sửa thành </a>.
+
+Lỗi 7: Dòng 19 — Lồng thẻ sai (lộn thẻ đóng trước và sau) — Sửa thành <p>Giá: <b>25.990.000đ</b></p>.
+
+Lỗi 8: Dòng 25 — Bảng dữ liệu thiếu thẻ cấu trúc <thead> và <tbody> — Sửa bằng cách bao bọc các hàng tương ứng.
+
+Lỗi 9: Dòng 34 — Dùng thẻ <main> tới lần thứ hai  — Sửa thành thẻ <aside>.
+
+Lỗi 10: Dòng 38 — Thẻ <p> chưa đóng — Sửa thành <p>Copyright 2026</p>.
