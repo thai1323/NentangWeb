@@ -65,6 +65,31 @@ Cách 2:
 - Ví dụ thực tế: Ảnh chi tiết sản phẩm, Sơ đồ/Bản đồ.
 
 **PHẦN C — PHÂN TÍCH & SUY LUẬN**
+**Câu C1 — Debug Form**
+1. Lỗi 1: Input "Tên" không có <label for="...">
+Sửa: <label for="fullname">Tên:</label> <input type="text" id="fullname" name="fullname" required> (Giúp trình đọc màn hình nhận diện và tăng diện tích click).
+
+2. Lỗi 2: Input Email chỉ dùng placeholder mà không có label
+Sửa: <label for="email">Email:</label> <input type="email" id="email" name="email" placeholder="Email của bạn" required> (Placeholder biến mất khi nhập chữ, không thể thay thế label).
+
+3. Lỗi 3: Hai ô mật khẩu không có label và không có cơ chế bắt buộc định dạng
+Sửa: <label for="pw">Mật khẩu:</label> <input type="password" id="pw" name="password" required> (Tương tự cho ô nhập lại mật khẩu).
+
+4. Lỗi 4: Input "Phone" dùng type="text" thay vì type="tel"
+Sửa: <label for="phone">Phone:</label> <input type="tel" id="phone" name="phone" value="0901234567"> (Sử dụng đúng ngữ nghĩa để hỗ trợ bàn phím số trên di động).
+
+5. Lỗi 5: Thẻ <select> thiếu thuộc tính name và label
+Sửa: <label for="city">Thành phố:</label> <select name="city" id="city">...</select> (Thiếu name thì dữ liệu sẽ không được gửi lên server khi submit).
+
+6. Lỗi 6: Các thẻ <option> trong Select thiếu thuộc tính value
+Sửa: <option value="hanoi">Hà Nội</option> (Nội dung hiển thị là cho người dùng, còn value là giá trị thực tế gửi về Database).
+
+7. Lỗi 7: Thẻ <label> cho "Điều khoản" thiếu Input bên trong hoặc thuộc tính for
+Sửa: <input type="checkbox" id="terms" name="terms" required> <label for="terms">Tôi đồng ý điều khoản</label> (Người dùng cần checkbox để tích chọn).
+
+8. Lỗi 8: Toàn bộ các input đều thiếu thuộc tính name
+Sửa: Thêm thuộc tính name="..." cho tất cả các thẻ input (Đây là lỗi cực kỳ nghiêm trọng vì nếu không có name, Backend sẽ không nhận được bất kỳ dữ liệu nào từ form này).
+**Câu C2 — Thiết kế chiến lược Validation**
 1. Viết pattern regex cho CMND/CCCD và Số tài khoản:
 - CMND/CCCD (12 chữ số): pattern="\d{12}"
 - Số tài khoản (10-15 chữ số): pattern="\d{10,15}"
