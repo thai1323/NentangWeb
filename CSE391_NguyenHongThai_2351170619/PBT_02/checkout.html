@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh toán đơn hàng</title>
+</head>
+<body>
+
+    <h1>Xác nhận đơn hàng</h1>
+
+    <section>
+        <h2>1. Chi tiết giỏ hàng</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>iPhone 16 Pro</td>
+                    <td>28.990.000đ</td>
+                    <td>1</td>
+                    <td>28.990.000đ</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Tổng cộng:</td>
+                    <td>28.990.000đ</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <form action="#" method="POST">
+        <label for="search-pro">Tìm thêm phụ kiện:</label>
+        <input list="products" id="search-pro" name="search-pro">
+        <datalist id="products">
+            <option value="Tai nghe AirPods">
+            <option value="Cáp USB-C">
+        </datalist>
+
+        <fieldset>
+            <legend>Thanh toán</legend>
+            <label>Phương thức:</label>
+            <input type="radio" id="cod" name="payment" value="cod" checked> <label for="cod">COD</label>
+            <input type="radio" id="bank" name="payment" value="bank"> <label for="bank">Chuyển khoản</label>
+            <br>
+            <label for="coupon">Mã giảm giá:</label>
+            <input type="text" id="coupon" name="coupon" pattern="SALE\d{4}" placeholder="SALE2026">
+            <br>
+            <label for="note">Ghi chú:</label>
+            <textarea id="note" name="note" rows="3"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Thông tin giao hàng</legend>
+            <label for="delivery-date">Ngày giao mong muốn:</label>
+            <input type="date" id="delivery-date" name="delivery-date" min="2026-04-24" required>
+            <br>
+            <label for="time-slot">Khung giờ:</label>
+            <select id="time-slot" name="time-slot">
+                <option value="morning">Sáng 8h-12h</option>
+                <option value="afternoon">Chiều 14h-18h</option>
+            </select>
+            <br>
+            <label for="delivery-range">Thời gian giao (1-7 ngày):</label>
+            <input type="range" id="delivery-range" name="delivery-range" min="1" max="7" step="1" value="3" oninput="this.nextElementSibling.value = this.value">
+            <output>3</output> ngày
+        </fieldset>
+
+        <label>Điểm tích lũy:</label>
+        <meter value="75" min="0" max="100"></meter> 75/100
+
+        <br><br>
+        <button type="submit" aria-label="Xác nhận đặt hàng">HOÀN TẤT ĐẶT HÀNG</button>
+    </form>
+</body>
+</html>
