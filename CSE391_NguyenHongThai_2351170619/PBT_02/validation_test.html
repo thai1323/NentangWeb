@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra HTML5 Validation - A2</title>
+</head>
+<body>
+
+    <h1>Test HTML5 Validation Attributes</h1>
+    
+    <form action="#">
+        <div>
+            <label>Trường hợp 1 (Required):</label>
+            <input type="text" required value="">
+        </div>
+        <br>
+
+        <div>
+            <label>Trường hợp 2 (Email):</label>
+            <input type="email" value="abc">
+        </div>
+        <br>
+
+        <div>
+            <label>Trường hợp 3 (Min/Max):</label>
+            <input type="number" min="1" max="10" value="15">
+        </div>
+        <br>
+
+        <div>
+            <label>Trường hợp 4 (Pattern):</label>
+            <input type="text" pattern="[0-9]{10}" value="abc123">
+        </div>
+        <br>
+
+        <div>
+            <label>Trường hợp 5 (Minlength):</label>
+            <input type="password" minlength="8" value="123">
+        </div>
+        <br>
+
+        <button type="submit">Bấm Submit để kiểm tra</button>
+    </form>
+
+</body>
+</html>

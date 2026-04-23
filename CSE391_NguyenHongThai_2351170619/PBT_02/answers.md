@@ -21,6 +21,17 @@
 
 10. type="checkbox" → Ô tích chọn (vuông) → Dùng để đồng ý với Điều khoản dịch vụ khi đặt hàng.
 
+**Câu A2 — Validation Attributes**
+1. Trường hợp 1: Trình duyệt báo lỗi "Vui lòng điền vào trường này" vì thuộc tính required bắt buộc input không được để trống, trong khi value="" đang là chuỗi rỗng.
+
+2. Trường hợp 2: Trình duyệt báo lỗi định dạng email không hợp lệ vì type="email" yêu cầu giá trị phải có cấu trúc tên@tênmiền, giá trị "abc" không thỏa mãn điều kiện này.
+
+3. Trường hợp 3: Trình duyệt báo lỗi giá trị vượt quá mức cho phép vì giá trị 15 lớn hơn giới hạn tối đa max="10".
+
+4. Trường hợp 4: Trình duyệt báo lỗi không khớp định dạng yêu cầu (Pattern mismatch) vì pattern="[0-9]{10}" chỉ chấp nhận đúng 10 chữ số, trong khi "abc123" chứa ký tự chữ.
+
+5. Trường hợp 5: Trình duyệt báo lỗi văn bản quá ngắn vì minlength="8" yêu cầu tối thiểu 8 ký tự, giá trị "123" chỉ có 3 ký tự.
+
 **Câu A3 — Accessibility**
 1. <label for="email"> quan trọng cho người dùng screen reader vì:
 - Kết nối trực tiếp: Nó liên kết văn bản mô tả với ô nhập liệu qua thuộc tính id.
