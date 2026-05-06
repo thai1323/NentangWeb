@@ -1,0 +1,7 @@
+.contact-wrapper { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; }
+.contact-info h3 { margin-bottom: 1rem; color: var(--color-dark); }
+.form-group { margin-bottom: 1.5rem; display: flex; flex-direction: column; }
+.form-group label { margin-bottom: 5px; font-weight: 500; }
+.contact-form input, .contact-form textarea { padding: 12px; border: 1px solid #ddd; border-radius: 5px; }
+.contact-form button { padding: 12px 30px; background: var(--color-primary); color: white; border: none; cursor: pointer; border-radius: 5px; align-self: flex-start; }
+@media (max-width: 768px) { .contact-wrapper { grid-template-columns: 1fr; } }

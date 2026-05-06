@@ -1,0 +1,2 @@
+.about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center; }
+.about-image img { width: 100%; border-radius: 20px; }

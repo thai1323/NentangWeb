@@ -1,0 +1,5 @@
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.skill-info { display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: bold; }
+.skill-bar { background: #e2e8f0; height: 12px; border-radius: 10px; overflow: hidden; }
+.skill-progress { background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); height: 100%; transition: width 1s ease; }
+@media (max-width: 768px) { .skills-grid { grid-template-columns: 1fr; } }
